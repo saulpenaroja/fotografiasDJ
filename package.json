@@ -1,0 +1,48 @@
+{
+  "name": "visor-presentaciones",
+  "version": "1.0.0",
+  "description": "Aplicación para proyección de fotos en tiempo real",
+  "author": "SaulPeñaroja",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win --x64",
+    "build-linux": "electron-builder --linux",
+    "build-mac": "electron-builder --mac",
+    "build-all": "npm run build-win && npm run build-linux && npm run build-mac"
+  },
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "dicer": "^0.3.1",
+    "express": "^4.17.1",
+    "formidable": "^3.5.2",
+    "multer": "^1.4.5-lts.2",
+    "qrcode": "^1.4.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.visorpresentaciones.app",
+    "productName": "Visor Presentaciones",
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "category": "Utility"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg"
+      ]
+    }
+  }
+}
