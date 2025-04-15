@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartir Contenido</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container upload-container">
+        <header class="upload-header">
+            <h1>Compartir Contenido</h1>
+        </header>
+
+        <div class="upload-section">
+            <h2>Enviar Imagen</h2>
+            <div class="image-preview-container-compact">
+                <img id="image-preview" src="#" alt="" style="display: none;">
+            </div>
+            <div class="file-input-container">
+                <input type="file" id="image-input" accept="image/*" capture>
+                <label for="image-input" class="file-input-label">Seleccionar imagen o tomar foto</label>
+            </div>
+            <button id="send-image" class="primary-button">Enviar Imagen</button>
+        </div>
+
+        <div class="upload-section">
+            <h2>Enviar Texto</h2>
+            <textarea id="text-input" placeholder="Escribe aquí el texto a compartir..."></textarea>
+            <button id="send-text" class="primary-button">Enviar Texto</button>
+        </div>
+
+        <div id="status-message" class="status-message hidden"></div>
+        
+        <div class="preview-section-compact">
+            <h2>Vista previa actual</h2>
+            <div id="preview-container" class="preview-container-compact">
+                <p class="empty-preview">Cargando...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/upload.js"></script>
+</body>
+</html>

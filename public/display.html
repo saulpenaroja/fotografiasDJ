@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Contenido</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container display-container">
+        <header class="display-header">
+            <h1>Visualizador de Contenido</h1>
+        </header>
+
+        <div class="content-area" id="content-area">
+            <div id="image-container">
+                <!-- Imágenes se mostrarán aquí -->
+                <!-- <img id="watermark" src="/diego-logo.png" alt="Diego Logo"> -->
+            </div>
+            <div id="text-container">
+                <!-- Texto se mostrará aquí -->
+            </div>
+            <div id="empty-container" class="hidden">
+                <p>No hay contenido disponible</p>
+            </div>
+
+            <!-- Botones de navegación sobre la imagen -->
+            <div class="overlay-controls">
+                <button id="prev-slide-overlay" class="overlay-nav-button">&lt;</button>
+                <button id="next-slide-overlay" class="overlay-nav-button">&gt;</button>
+                <button id="fullscreen-toggle" class="overlay-action-button">Pantalla completa</button>
+            </div>
+        </div>
+
+        <div class="navigation-controls">
+            <button id="prev-slide" class="nav-button">Anterior</button>
+            <div class="slide-indicator">
+                <span id="current-slide">0</span>/<span id="total-slides">0</span>
+            </div>
+            <button id="next-slide" class="nav-button">Siguiente</button>
+        </div>
+
+        <div class="admin-controls">
+            <button id="delete-slide" class="action-button danger">Eliminar</button>
+            <button id="goto-first" class="action-button">Primera</button>
+            <button id="goto-last" class="action-button">Última</button>
+        </div>
+
+        <div id="thumbnails-container" class="thumbnails">
+            <!-- Las miniaturas se mostrarán aquí -->
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/display.js"></script>
+</body>
+
+</html>
